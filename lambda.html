@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [1,2,3,4,5,6,7];
+
+        // filter 메서드 파라미터는 함수가 들어가야 함
+        // 이 함수는 boolean 값을 반환하는 함수
+        // 이것을 predicate라 함
+        // 자바에서도 predicate라 함
+
+        var restult = arr.filter((i) => (i%2==0)).reduce((a,b)=>a*b);
+        console.log("필터값은" + restult);
+
+        result = arr.map((i) => {
+            var result = i*5+7;
+            console.log("입력값음 무엇인가요", i);
+            return result;
+        });
+
+        console.log("맵 함수는 " + result);
+
+        // reduce의 첫 번째 파라미터는 함수, 두 번째는 초기값
+        
+        result = arr.reduce((a,b) => a+b, 10);
+        console.log("두 파라미터를 더한 값은 " + result);
+
+        result = arr.reduce((a,b) => a-b);
+        console.log("두 파라미터를 뺀 값은 " + result);
+
+        result = arr.reduce((a,b) => a*b), 2;
+        console.log("두 파라미터를 곱한 값은 " + result);
+        // map과 filter는 iterable한 자료형에서 사용 가능한 함수
+
+        var stringArr = ["fuck", "you", "man"];
+        result = stringArr.filter(i => i.length>3);
+        console.log(result);
+
+        result = stringArr.filter(i => i.includes('a'))
+        console.log(result);
+        // 자바에서 amp, reduce, filter 를 사용할 경우
+        // 자바스크립트에서 데이터로 처리하고 콘솔로그로 확인후 자바에 적용
+        // map()은 stream객체라 디버깅이 힘듦
+
+        arr.forEach(i => console.log("for each "+i*20));
+
+        // 배열, 익명함수, 람다
+        // filter, map, reduce
+        // each
+        // literal 객체
+
+        var lambda = (a,b,c) => {
+            var max = a;
+
+            if (b>a) max = b;
+
+            if(c>max) max=c;
+            
+            return max;
+        }
+
+        console.log(lambda(3,17,4));
+
+        console.log(lambda(10,5,15));
+
+        var blue = (i) => { return i*10};
+        
+        var arr2 = [1,2,4,5,6];
+        var data = arr2.map(blue);
+        // = arr2.map((i)=>{return i*7;});
+        console.log("맵 결과는" + data);
+
+        var red = (i) => {
+            var result = true;
+
+            if(i%3==0) true;
+            else result = false;
+
+            return result;
+        }
+
+        //filter는 true 또는 false만 반환하는 predicate만 들어감
+
+        var arr3 = [1,2,3,4,5,6,7,8,9];
+        console.log("레드 필터 결과는"+arr3.filter(red));
+        console.log(arr3.filter((i) => {
+            if(i > 3)
+            return i;
+        }));
+
+        console.log("필터 결과는"+arr3.filter(i => i>7));
+
+        // 한줄일 경우에는 간단하게 return 값을 자동으로 설정해주기 때문에 별도로 return을 해줄 필요가 없다
+        // 식이 복잡해질 경우에는 정상적으로 함수 식을 작성해서 만들어주면 된다.
+        
+        
+
+    </script>
+</head>
+<body>
+    <p id="test"> 응 뒤져 </p>
+
+    <script>
+        var test = document.getElementById("test");
+        test.innerHTML = "응 아니야";
+        </script>
+</body>
+</html>

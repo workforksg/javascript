@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sum(a,b){
+            return a+b;
+        }
+
+        var result =sum(7,6);
+        console.log("두 개의 합은 ", result);
+
+        var literal = function(a,b){
+            return a+b;
+        }
+
+        result = literal(7, 60);
+        console.log("익명함수 리터럴 두개의 합은 ", result);
+
+        var lambdatemp = (a,b) => {return a+b};
+        result = lambdatemp(2,9);
+        console.log("람다함수 호출 후 결과는 ", result);
+
+        lambdatemp = (a,b) => {
+            var result = 0;
+            result = a*20 + 70 + b;
+            return result;
+        }
+
+        result = lambdatemp(2,9);
+        console.log("람다함수 호출 후 결과는 ", result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
